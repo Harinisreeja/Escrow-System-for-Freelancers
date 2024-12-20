@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up </title>
+    <style>
+            .style1{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                /* min-height:50vh; */
+                background-image:url('https://images.pexels.com/photos/1631678/pexels-photo-1631678.jpeg?cs=srgb&dl=pexels-abdghat-1631678.jpg&fm=jpg');
+                background-repeat:no-repeat;
+                background-size: cover;
+                background-position:center;
+             }
+            .messageDiv{ 
+                background-color: hsl(327,90%,28%);
+                color:white;
+                padding:10px 20px;
+                margin:10px;
+                border-radius: 5px;
+                font-size: 1rem;
+                opacity:0;
+                animation: fadeOut 7s forwards;
+            }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="firebaseauth.js"></script>
+    </head>
+    <body class="style1">
+        <form action="" method="POST">
+         <div id="signUpMessage" class="messageDiv" style="display:none"></div>
+            <h2 align="center">SIGN UP</h2>
+            <input type="text" style="width:300px ;height:15px ; padding:10px ; background-color: transparent;border-radius:10px " id="firstname" placeholder="First Name" required/> 
+            <i class='bx bx-user'></i>
+            <br/><br/>
+            <input type="text" style="width:300px ;height:15px ; padding:10px ; background-color: transparent;border-radius:10px " id="lastname" placeholder="Last Name" required/> 
+            <i class='bx bx-user'></i>
+            <br/><br/>
+            <input type="text" style="width:300px ; height:20px ; padding:10px;background-color: transparent; border-radius:10px " id="email" placeholder="Email" required/>
+            <i class='bx bx-envelope'></i> 
+            <br/><br/>
+            <input type="password" style="width:300px ; height:20px ; padding:10px ;background-color: transparent; border-radius:10px "; id="password" placeholder="Password" required />
+            <i class='bx bx-lock-alt'></i>
+            <br/><br/>
+            <input type="password" style="width:300px ; height:20px ; padding:10px ;background-color: transparent; border-radius:10px "; id="confirmpassword" placeholder="Confirm Password" required />
+            <i class='bx bx-lock-alt'></i>
+            <br/><br/>
+            <!-- <input style="height:35px; width:330px ;background-color: rgb(87, 50, 238); color:white;text-align:center" type="submit" name="SignUp" value="Sign up"/> -->
+            <button style="height:35px; width:330px ;background-color: rgb(87, 50, 238); color:white;text-align:center" id="submitSignUp">Sign Up</button>
+            <br/><br/>
+            <p style="text-align: center">Already have an account?<a href="#" style="color:rgb(14, 56, 240); text-decoration: none;">Sign In</a></p>
+            <!-- <hr width="50%"/>
+             <div class="style1">
+                <span>OR</span>
+             </div>
+            <hr width="50%"/> -->
+            <b><u>Other options</u></b><br/><br/>
+            <input style="height:35px; width:330px;text-align:center;background-color: transparent; border-radius:20px" type="submit" id="Google" value="Continue with Google"/>
+            <i class='bx bxl-google'></i>
+            <br/><br/>
+            <input style="height:35px; width:330px ;text-align:center; background-color: transparent;border-radius:20px" type="submit" id="Facebook" value="Continue with Facebook"/>
+            <i class='bx bxl-facebook' ></i>
+            <br/><br/>
+            <input style="height:35px; width:330px ;text-align:center;background-color: transparent; border-radius:20px" type="submit" id="Apple" value="Continue with Apple"/>
+            <i class='bx bxl-apple' ></i>
+            <br/><br/>
+
+        </form>
+    </body>
+</html>
