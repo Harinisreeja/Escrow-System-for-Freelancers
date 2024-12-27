@@ -2,6 +2,11 @@
    background-color: rgb(212, 9, 43);
    max-width: 1600px;
    margin:auto;
+   position:fixed;
+   top:0;
+   right:0;
+   width:100%;
+   z-index:999;
 }
 #menu li a{
    color:white;
@@ -14,16 +19,21 @@
    display:flex;
    justify-content: space-between;
    align-items: center;
-   height:476px
+   height:210px
 }
 #navbar .logo{
    width:10px;  
+}
+.logo img {
+   width:500px;
+   height:200px
 }
 #menu{
    display:flex;
    justify-content: space-between;
    align-items: center;
    list-style: none;
+   /* width:45%; */
 }
 #btn{
    margin-left:40px;
@@ -69,6 +79,19 @@
    #menu li a{
       color:rgb(128, 3, 24);
    }
+   .hero-box {
+      flex-direction: column;
+      height:auto;
+      justify-content: center;
+      align-items: start;
+      padding:10rem 0;
+   }
+   .h-left{
+      width:100%;
+   }
+   .h-right{
+      display:none;
+   }
 }
 .hero{
    background-color:rgb(212, 9, 43) ;
@@ -77,12 +100,13 @@
    display:flex;
    justify-content: space-between;
    align-items: center;
+   height:125vh
 }
 .h-right {
-   width:40%;
+   width:45%;
 }
 .h-right img{
-   width: 60%;
+   width: 450px;
    object-fit:cover;
 }
 .h-left {
@@ -91,6 +115,10 @@
 }
 .h-left p{
    padding:1.2rem 0;
+   font-size:1.3rem;
+}
+.h-left h1{
+   font-size:3.2rem;
 }
 .search{
    position: relative;
