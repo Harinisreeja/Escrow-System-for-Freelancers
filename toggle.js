@@ -5,5 +5,5 @@ if (bar){
     bar.addEventListener("click",()=>{
         menu.classList.toggle("active");
     });
-
 }
+
