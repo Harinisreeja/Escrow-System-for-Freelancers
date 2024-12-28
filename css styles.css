@@ -156,6 +156,20 @@
 .jobs .jList.delete{
    display:none;
 }
+.trust .t-box {
+   display:flex;
+   align-items: center;
+   flex-wrap:wrap;
+   padding-top: 2rem;
+}
+.trust .t-box img {
+   width:200px;
+   object-fit: cover;
+   margin:1rem 1rem 1rem 0;
+}
+.trust h1{
+   font-size:3.1rem;
+}
 
 @media(max-width:699px) {
    #menu {
