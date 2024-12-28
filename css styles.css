@@ -24,9 +24,9 @@
 #navbar .logo{
    width:10px;  
 }
-.logo img {
-   width:500px;
-   height:200px
+.logo img{
+   width:450px;
+   height:210px;
 }
 #menu{
    display:flex;
@@ -92,7 +92,7 @@
    top:15px;
    right:50px;
 }
-#search-btn{
+#s-btn{
    text-decoration:none;
    background-color:rgb(156, 10, 35);
    color:white;
@@ -170,6 +170,61 @@
 .trust h1{
    font-size:3.1rem;
 }
+.team h1{
+   font-size: 3.1rem;
+}
+.team-container{
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap:wrap;
+}
+.team-container .f1-box {
+   border: 2px solid rgb(216, 18, 51);
+   height:450px;
+   padding: 2rem 1rem;
+   border-radius:20px;
+   margin-top :3rem;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.f1-box img {
+   border-radius: 50%;
+   margin-bottom: 1rem;
+}
+.skill {
+   padding-bottom: 2rem;
+}
+#key {
+   font-size:0.8 rem;
+   background-color: rgb(193, 133, 233);
+   padding: 10px 20px;
+   border-radius: 20px;
+}
+footer{
+   background-color:rgb(212, 9, 43) ;
+   color:white;
+   padding: 4rerm 0;
+}
+.top {
+   display:flex;
+   align-items: center;
+   text-align: start;
+   justify-content: space-between;
+   flex-wrap:wrap;
+}
+.top .logo{
+   width:300px;
+   height:200px;
+   margin-bottom:1rem
+}
+.top i{
+   color:white;
+   font-size:2rem;
+   margin-left:0.5rem;
+}
 
 @media(max-width:699px) {
    #menu {
@@ -245,5 +300,13 @@
       font-size:20px;
       text-wrap:nowrap;
       justify-items: center;
+   }
+   .team-container .f1-box{
+     border-radius: 10px;
+     margin-top :1rem;
+     text-align: center;
+   }
+   .skill {
+      padding-bottom: 1rem;
    }
 }
