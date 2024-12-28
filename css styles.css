@@ -133,6 +133,29 @@
    background-color: rgb(156, 6, 31);
    color:white;
 }
+.jobs .jList {
+   margin-top: 3rem;
+   display:grid;
+   grid-template-columns: repeat(4,1fr); 
+   border:1px solid rgb(233, 23, 58);
+   align-items:center;
+   justify-items: start;
+   cursor:pointer;
+   color:black;
+   padding:1rem 2rem;
+}
+.jobs .jList img {
+   width:50px;
+}
+.jobs .jList h3{
+   padding-bottom:0;
+}
+.jobs .jList:hover{
+   background-color:pink;
+}
+.jobs .jList.delete{
+   display:none;
+}
 
 @media(max-width:699px) {
    #menu {
