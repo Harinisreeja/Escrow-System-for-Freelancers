@@ -1,12 +1,14 @@
 #head{
    background-color: rgb(212, 9, 43);
-   max-width: 1600px;
-   margin:auto;
    position:fixed;
    top:0;
    right:0;
    width:100%;
    z-index:999;
+}
+.obj-width{
+   max-width:1200px;
+   margin:auto;
 }
 #menu li a{
    color:white;
@@ -22,7 +24,7 @@
    height:210px
 }
 #navbar .logo{
-   width:10px;  
+   width:20px;  
 }
 .logo img{
    width:450px;
@@ -33,7 +35,6 @@
    justify-content: space-between;
    align-items: center;
    list-style: none;
-   /* width:45%; */
 }
 #btn{
    margin-left:40px;
@@ -55,7 +56,7 @@
    display:flex;
    justify-content: space-between;
    align-items: center;
-   height:125vh
+   height:125vh;
 }
 .h-right {
    width:45%;
@@ -225,7 +226,28 @@ footer{
    font-size:2rem;
    margin-left:0.5rem;
 }
-
+.bottom{
+   padding-top:2rem;
+   text-align:start;
+   display:flex;
+   justify-content: space-between;
+   flex-wrap:wrap;
+}
+.bottom div{
+   display:flex;
+   flex-direction:column;
+}
+.bottom a{
+   text-decoration: none;
+   color:white;
+   line-height:35px;
+   font-size:1.1rem;
+}
+@media(max-width:1200px){
+   .obj-width{
+      width:95%;
+   }
+}
 @media(max-width:699px) {
    #menu {
       background-color:pink;
@@ -308,5 +330,12 @@ footer{
    }
    .skill {
       padding-bottom: 1rem;
+   }
+   .bottom div {
+      width:50%;
+      margin-bottom:50px; 
+   }
+   .top i{
+      margin-left:1rem 1rem 0 0;
    }
 }
