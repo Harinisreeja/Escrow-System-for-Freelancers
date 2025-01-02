@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse jobs</title>
+    <title>Search Jobs</title>
+    <link rel="stylesheet" type="text/css" href="../css styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+    <!-- Navbar section -->
+    <header id="head">
+        <div id="navbar" class="obj-width">
+         
+            <a href="../index.html" class="logo"><img src="https://dynamic.design.com/preview/logodraft/869ee20a-f5c7-46df-90c6-4fe725088b52/image/large.png"></a>
+            <ul id="menu">
+                <li><a href="../index.html" >Home</a></li>
+                <li><a href="#" >Find jobs</a></li>
+                <li><a href="../contact.html" >Contact</a></li>
+                <button id="btn"><a href="Sign in.html" style="text-decoration:none">Login</a></button>
+            </ul>
+            <i id="bar" class='bx bx-menu'></i>
+        </div>
+    </header>
+
+    <!-- Job Listing section -->
+
+     <section class="jobs sec-space obj-width">
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1>Demanding jobs</h1>
+        <p>Most viewed and all-time top-selling services</p>
+        <form>
+            <i class='bx bx-search-alt-2'></i>
+            <input type="text" placeholder="Search Jobs" id="searchBar">
+        </form>
+
+        <div class="jobs-container" id="root">
+        </div>
+     </section>
+              
+    <!-- Footer section -->
+
+    <footer class="footer">
+        <div class="obj-width">
+            <div class="top">
+                <div>
+                    <img class="logo" src="https://dynamic.design.com/preview/logodraft/869ee20a-f5c7-46df-90c6-4fe725088b52/image/large.png">
+                    <p>Search for your desired jobs.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="https://www.instagram.com"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="https://www.twitter.com"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.behance.net"><i class='bx bxl-behance' ></i></a>
+                </div>
+            </div>
+            <div class="bottom">
+                <div>
+                    <h3>Project</h3>
+                    <a href="#">Changelog</a>
+                    <a href="#">status</a>
+                    <a href="#">License</a>
+                    <a href="#">All Versions</a>
+                </div>
+                <div>
+                    <h3>Community</h3>
+                    <a href="https://github.com/Harinisreeja">GitHub</a>
+                    <a href="#">Issues</a>
+                    <a href="#">Project</a>
+                    <a href="https://www.twitter.com">Twitter</a>
+                </div>
+                <div>
+                    <h3>Help</h3>
+                    <a href="#">Support</a>
+                    <a href="#">Troubleshooting</a>
+                    <a href="#">Contact us</a>
+                </div> <div>
+                    <h3>Others</h3>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">License</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+     <script src="job-list.js"></script>
+     <script src="../toggle.js"></script>
+     <script src="jobSearch.js"></script>
+
 </body>
 </html>

@@ -6,6 +6,9 @@
    width:100%;
    z-index:999;
 }
+/* .extra-space {
+   padding-top:45rem;
+} */
 .obj-width{
    max-width:1200px;
    margin:auto;
@@ -241,6 +244,37 @@ footer{
    text-decoration: none;
    color:white;
    line-height:35px;
+   font-size:1.1rem;
+}
+logout div{
+   color:blueviolet;
+   font-weight:550;
+}
+logout span{
+   font-weight:500;
+   color:black;
+}
+
+
+.jobs form {
+   margin-top :3rem;
+   width:100%;
+   border:1px solid rgb(233, 23, 58);
+   border-radius: 5px;
+   display:flex;
+   justify-content:space-between;
+   align-items: center;
+}
+.jobs form i{
+   padding-left: 1rem;
+   font-size: 1.1rem;
+   font-weight:bold;
+}
+.jobs form input {
+   width:100%;
+   border:none;
+   outline:none;
+   padding:1rem 0.5rem;
    font-size:1.1rem;
 }
 @media(max-width:1200px){
