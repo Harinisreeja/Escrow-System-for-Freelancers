@@ -39,7 +39,7 @@ signIn.addEventListener('click',(event)=>{
         showMessage('Login is successful','signInMessage');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId',user.uid);
-        window.location.href='homepage.html';
+        window.location.href='index.html';
     })
     .catch((error)=>{
         const errorCode=error.code;
