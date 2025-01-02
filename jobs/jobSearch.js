@@ -1,5 +1,14 @@
 const categories = Array.from(jCategory)
 
+document.getElementById("searchBar").
+addEventListener("keyup", (e)=>{
+    const searchData = e.target.value.toLowerCase();
+    const filterData = categories.filter((item)=>
+        item.title.toLowerCase().includes(searchData)
+    );
+    displayItems(filterData);
+});
+
 const displayItems =(items) => {
     const rootElement = document.getElementById("root")
     rootElement.innerHTML = "";
@@ -16,7 +25,11 @@ const displayItems =(items) => {
         `;
 
         rootElement.appendChild(jList);
-    })
+
+        jList.addEventListener('click',()=>{
+            window.location.href=`job-details.html?id=${index}`;
+        });
+    });
 };
 
 displayItems(categories);

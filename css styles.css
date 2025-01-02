@@ -6,9 +6,9 @@
    width:100%;
    z-index:999;
 }
-/* .extra-space {
-   padding-top:45rem;
-} */
+.extra-space {
+   padding-top:15rem;
+}
 .obj-width{
    max-width:1200px;
    margin:auto;
@@ -277,6 +277,30 @@ logout span{
    padding:1rem 0.5rem;
    font-size:1.1rem;
 }
+.job-header {
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color:#f8fcfa ;
+   border: 1px solid rgb(233, 23, 58);
+   border-radius: 38px;
+   padding: 2rem;
+}
+.job-header img{
+   width:100px;
+   background: white ;
+   padding:1rem;
+   margin-right: 2rem;
+   border-radius: 15px;
+}
+.job-img-row {
+   display: flex;
+   align-items:center ;
+}
+.job-description p {
+   padding-bottom:2rem;
+}
+
 @media(max-width:1200px){
    .obj-width{
       width:95%;
