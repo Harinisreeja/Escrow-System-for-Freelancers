@@ -300,6 +300,29 @@ logout span{
 .job-description p {
    padding-bottom:2rem;
 }
+.contact{
+   display:flex;
+   align-items:center;
+   justify-content: space-between;
+}
+.contact-img {
+   width:100%;
+   object-fit:cover;
+   height:100%;
+}
+.contact form {
+   max-width:400px;
+}
+.contact input,
+.contact textarea {
+   width:100%;
+   margin:0.5rem 0 1rem 0;
+   border:1px solid rgb(233, 23, 58);
+   box-shadow:none;
+   outline:none;
+   padding:0.8rem;
+   font-size:1.1rem;
+}
 
 @media(max-width:1200px){
    .obj-width{
@@ -411,5 +434,17 @@ logout span{
    .job-header img{
       padding: 0rem;
       border-radius:10px;
+   }
+   .contact {
+      display:flex;
+      flex-direction:column;
+      align-items: flex-start;
+   }
+   .contact-img{
+      width:100%;
+   }
+   .contact-img img {
+      width:70%;
+      height:auto;
    }
 }
