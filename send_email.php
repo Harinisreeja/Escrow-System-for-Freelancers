@@ -1,14 +1,14 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"]=='POST') {
-    $name =$POST['name'];
-    $email=$POST['email'];
-    $message=$POST['message'];
+    $name =$_POST['name'];
+    $email=$_POST['email'];
+    $message=$_POST['message'];
 
     $to = "satyavarapuharinisreeja@gmail.com";
     $subject = "New Contact Form Submission";
-    $headers = "From : " .$name . "<" . $email . ">\r\n";
-    $headers .="Reply-To :" .$email . "\r\n";
+    $headers = "From : " . $name . " <" . $email . ">\r\n";
+    $headers .="Reply-To : " . $email . "\r\n";
     $headers .="Content-Type :text/plain;
     charset=utf-8\r\n";
 
@@ -23,4 +23,5 @@ if($_SERVER["REQUEST_METHOD"]=='POST') {
     http_response_code(403);
     echo "Access denied";
 }
+
 ?>
