@@ -46,16 +46,19 @@ body {
     background-position: center;
 }
 .auth-card {
-    background: rgba(255,255,255,0.9);
+    background: transparent;
     padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-radius: 0;
+    box-shadow: none;
     text-align: center;
     max-width: 400px;
     width: 100%;
 }
 .auth-card h2 {
     margin-bottom: 1rem;
+    color: #8a2be2;
+    font-family: 'Times New Roman', serif;
+    font-weight: 600;
 }
 .auth-card hr {
     border:0;
@@ -66,9 +69,16 @@ body {
 .auth-card a {
     color: var(--primary-color);
     text-decoration: none;
+    font-family: 'Times New Roman', serif;
+    font-weight: 600;
 }
 .auth-card a:hover {
     text-decoration: underline;
+}
+.auth-card p {
+    color: black;
+    font-family: 'Times New Roman', serif;
+    font-weight: 600;
 }
 .auth-card .messageDiv {
     background-color: hsl(327,90%,28%);
@@ -79,6 +89,44 @@ body {
     font-size: 1rem;
     opacity:0;
     animation: fadeOut 7s forwards;
+}
+
+/* Sign Up button styling */
+#submitSignUp {
+   background-color: rgb(87, 50, 238);
+   color: rgb(255, 255, 255);
+   width: 300px;
+   height: 35px;
+   border: none;
+   border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+#submitSignUp:hover {
+   background-color: rgb(132, 111, 236);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(87, 50, 238, 0.3);
+}
+
+/* Sign In button styling */
+#submitSignIn {
+   background-color: rgb(95, 234, 155);
+   color: black;
+   border: none;
+   border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   width: 100%;
+   padding: 0.8rem 1rem;
+}
+
+#submitSignIn:hover {
+   background-color: rgb(40, 167, 69);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(66, 241, 142, 0.3);
 }
 
 /* header */
