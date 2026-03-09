@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobs · Escrow System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Header section -->
+    <header id="head">
+        <div id="navbar" class="obj-width">
+            <a href="../Sign up.html" class="logo"><img src="https://dynamic.design.com/preview/logodraft/869ee20a-f5c7-46df-90c6-4fe725088b52/image/large.png"></a>
+            <ul id="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="job.html">Find jobs</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <button id="btn"><a href="../Sign in.html" style="text-decoration:none">Login</a></button>
+            </ul>
+            <i id="bar" class='bx bx-menu'></i>
+        </div>
+    </header>
+
+    <!-- Jobs section -->
+    <section class="jobs sec-space obj-width extra-space">
+        <h1>Find Your Dream Job</h1>
+        <p>Explore thousands of job opportunities tailored for freelancers.</p>
+
+        <!-- Search bar -->
+        <form class="jobs-form">
+            <input type="text" placeholder="Search jobs..." id="job-search">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Job filters -->
+        <ul class="job-id">
+            <li data-target="all" class="active">All Jobs</li>
+            <li data-target="freelancer">Freelancer</li>
+            <li data-target="fullTime">Full Time</li>
+            <li data-target="partTime">Part Time</li>
+        </ul>
+
+        <!-- Job listings -->
+        <div class="jobs-container">
+            <div data-item="fullTime" class="jList">
+                <img src="https://th.bing.com/th/id/OIP.uBYsSL7JDekYP3VpxWZvYQHaHa?rs=1&pid=ImgDetMain" alt="Web Developer">
+                <h3>Web Developer</h3>
+                <p>$1200-1500/m</p>
+                <span>Full Time</span>
+            </div>
+            <div data-item="freelancer" class="jList">
+                <img src="https://th.bing.com/th/id/OIP.Z0WaAEp4fOq3Q92Idq29cwHaHa?rs=1&pid=ImgDetMain" alt="Freelancer">
+                <h3>Freelancer</h3>
+                <p>$900-1200/m</p>
+                <span>Freelancer</span>
+            </div>
+            <div data-item="partTime" class="jList">
+                <img src="https://th.bing.com/th/id/OIP.CH_Ljw5hpxU03HXEuOC1pAHaHa?rs=1&pid=ImgDetMain" alt="Business Associate">
+                <h3>Business Associate</h3>
+                <p>$900-1100/m</p>
+                <span>Part Time</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="obj-width">
+            <div class="top">
+                <div>
+                    <img class="logo" src="https://dynamic.design.com/preview/logodraft/869ee20a-f5c7-46df-90c6-4fe725088b52/image/large.png">
+                    <p>Search for your desired jobs.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="https://www.instagram.com"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://www.twitter.com"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.behance.net"><i class='bx bxl-behance'></i></a>
+                </div>
+            </div>
+            <div class="bottom">
+                <div><h3>Project</h3><a href="#">Changelog</a><a href="#">Status</a><a href="#">License</a><a href="#">All Versions</a></div>
+                <div><h3>Community</h3><a href="https://github.com/Harinisreeja">GitHub</a><a href="#">Issues</a><a href="#">Project</a><a href="https://www.twitter.com">Twitter</a></div>
+                <div><h3>Help</h3><a href="#">Support</a><a href="#">Troubleshooting</a><a href="#">Contact us</a></div>
+                <div><h3>Others</h3><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">License</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../toggle.js"></script>
+    <script src="job-list.js"></script>
+    <script src="jobSearch.js"></script>
+</body>
+</html>
