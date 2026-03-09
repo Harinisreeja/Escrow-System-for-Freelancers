@@ -1,5 +1,3 @@
-
-/* theme variables and resets */
 :root {
     --primary-color: #d4092b;
     --secondary-color: #8e1624;
@@ -94,7 +92,7 @@ body {
 }
 
 .extra-space {
-   padding-top:15rem;
+   padding-top:11rem;
 }
 
 .obj-width{
@@ -205,7 +203,7 @@ body {
 .h-left {
    width:45%;
    color:white;
-   margin-top: 8rem;
+   margin-top: 6rem;
 }
 .h-left p{
    padding:1.2rem 0;
@@ -239,16 +237,38 @@ body {
    display:flex;
    align-items:center;
    justify-content:center;
-   padding:0 2rem;
-   background: var(--btn-color);
+   padding:0 2.5rem;
+   background: linear-gradient(135deg, var(--btn-color), var(--btn-hover));
    color:#fff;
    text-decoration:none;
    height:100%;
-   font-weight:500;
-   transition:background-color 0.3s ease;
+   font-weight:600;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   border: 2px solid transparent;
+   border-radius: 25px;
+   box-shadow: 0 4px 15px rgba(156, 10, 35, 0.3);
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+}
+.search a::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+   transition: left 0.5s;
 }
 .search a:hover {
-   background: var(--btn-hover);
+   background: linear-gradient(135deg, var(--btn-hover), var(--btn-color));
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px rgba(156, 10, 35, 0.4);
+}
+.search a:hover::before {
+   left: 100%;
 }
 #s-btn{
    text-decoration:none;
@@ -441,8 +461,28 @@ logout span{
    width:100%;
    border:none;
    outline:none;
+   border-radius: 0 5px 5px 0;
    padding:1rem 0.5rem;
    font-size:1.1rem;
+}
+.jobs form button {
+   background: linear-gradient(135deg, var(--btn-color), var(--btn-hover));
+   color: white;
+   border: none;
+   padding: 1rem 2rem;
+   font-size: 1.1rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   border-radius:0 5px 5px 0;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 2px 8px rgba(156, 10, 35, 0.2);
+}
+.jobs form button:hover {
+   background: linear-gradient(135deg, var(--btn-hover), var(--btn-color));
+   transform: translateY(-1px);
+   box-shadow: 0 4px 12px rgba(156, 10, 35, 0.3);
 }
 .job-header {
    display:flex;
