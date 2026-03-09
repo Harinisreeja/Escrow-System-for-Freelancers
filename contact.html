@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact page </title>
+    <title>Contact · Escrow System</title>
+    <!-- Google font and main stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -24,24 +26,24 @@
     </header>
     <!-- contact -->
     <section class="contact obj-width sec-space extra-space">
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <div class="contact-img">
-            <h2>Get in touch</h2>
-            <p>Most viewed and all-time top-selling services</p>
-            <img src="https://th.bing.com/th/id/OIP.YjnjaqeJQF6Bj1jZB5sI_gHaHa?rs=1&pid=ImgDetMain">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get in touch</h2>
+                <p>Have a question or feedback? Send us a message and we'll get back to you shortly.</p>
+                <img src="https://th.bing.com/th/id/OIP.YjnjaqeJQF6Bj1jZB5sI_gHaHa?rs=1&pid=ImgDetMain" alt="contact illustration">
+            </div>
+            <div class="contact-form-card">
+                <form id="contact-form" method="POST" action="send_email.php">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" id="name" autocomplete="off" required />
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email" autocomplete="off" required/> 
+                    <label for="message">Message</label>       
+                    <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+                    <input type="submit" id="s-btn" value="Submit" /> 
+                </form>
+            </div>
         </div>
-        <form id="contact-form" method="POST" action="send_email.php">
-            <label for="name">Name :</label>
-            <input type="text" name="name" id="name" autocomplete="off" required />
-            <label for="email">Email :</label>
-            <input type="text" name="email" id="email" autocomplete="off" required/> 
-            <label for="message">Message :</label>       
-            <textarea  name="message" id="message" row="5" required></textarea>
-            <input type="submit" id="s-btn" value="Submit" /> 
-    </form>
     </section>
 
     <section class="contact obj-width sec-space">
