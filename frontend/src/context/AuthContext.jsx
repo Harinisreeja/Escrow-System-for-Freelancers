@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Set the default base API URL
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://escrow-system-for-freelancers.onrender.com/';
 
   useEffect(() => {
     const fetchUser = async () => {
