@@ -141,20 +141,19 @@ body {
 /* Header */
 #head {
    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-   position: fixed;
+   position: sticky;
    top: 0;
-   right: 0;
    width: 100%;
    z-index: 999;
    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .extra-space {
-   padding-top: 11rem;
+   padding-top: 4rem;
 }
 
 .obj-width {
-   max-width: 1200px;
+   width: min(1200px, calc(100% - 3rem));
    margin: auto;
 }
 
@@ -173,16 +172,18 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   height: 100px;
-   padding: 0 1rem;
+   min-height: 128px;
+   padding: 0;
 }
 #navbar .logo {
    display: flex;
    align-items: center;
 }
 .logo img {
-   height: 80px;
-   width: auto;
+   width: 220px;
+   height: 112px;
+   object-fit: contain;
+   object-position: center;
 }
 #menu {
    display: flex;
@@ -366,23 +367,24 @@ body {
 
 /* Job Section */
 .jobs .job-id {
-   margin-top: 2rem;
-   margin-bottom: 2rem;
+   margin: 2rem 0 1.5rem;
    display: flex;
    list-style: none;
    justify-content: flex-start;
    background: white;
-   border-radius: 8px;
+   border-radius: 12px;
    padding: 0;
    overflow: hidden;
    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+   flex-wrap: wrap;
 }
 .jobs .job-id li {
-   padding: 15px 30px;
+   padding: 1rem 2rem;
    cursor: pointer;
    color: black;
    font-weight: 600;
    transition: all 0.3s ease;
+   white-space: nowrap;
 }
 .jobs .job-id li.active {
    background-color: var(--btn-color);
@@ -391,17 +393,19 @@ body {
 .jobs-container {
    display: flex;
    flex-direction: column;
-   gap: 1.5rem;
+   gap: 1.25rem;
 }
 .jobs .jList {
    display: grid;
-   grid-template-columns: 80px 2fr 1fr 1fr; 
+   grid-template-columns: 72px minmax(0, 2fr) minmax(100px, 1fr) minmax(130px, 1fr);
+   gap: 1rem;
    border: 1px solid rgba(233, 23, 58, 0.2);
    align-items: center;
    cursor: pointer;
    color: black;
-   padding: 1.5rem 2rem;
-   border-radius: 12px;
+   padding: 1.25rem 2rem;
+   min-height: 90px;
+   border-radius: 14px;
    background: #fff;
    text-decoration: none;
    transition: all 0.3s ease;
@@ -412,17 +416,76 @@ body {
    transform: translateY(-3px);
 }
 .jobs .jList img {
-   width: 50px;
-   border-radius: 8px;
+   width: 48px;
+   height: 48px;
+   object-fit: contain;
+   border-radius: 50%;
 }
 .jobs .jList h3 {
    margin: 0;
-   font-size: 1.3rem;
+   font-size: 1.1rem;
+   line-height: 1.3;
 }
 .jobs .jList p {
    margin: 0;
    font-weight: 600;
    color: var(--primary-color);
+}
+.jobs .jobs-intro {
+   margin: 0.25rem 0 1.25rem;
+   color: #666;
+}
+.jobs .jobs-form {
+   display: flex;
+   width: min(100%, 520px);
+   margin-bottom: 1rem;
+}
+.jobs .jobs-form input {
+   flex: 1;
+   min-width: 0;
+   height: 44px;
+   padding: 0 1rem;
+   border: 1px solid #d7d7d7;
+   border-right: 0;
+   border-radius: 8px 0 0 8px;
+   font: inherit;
+   background: #fff;
+}
+.jobs .jobs-form input:focus {
+   outline: none;
+   border-color: var(--btn-color);
+}
+.jobs .jobs-form button {
+   height: 44px;
+   padding: 0 1.25rem;
+   border: 0;
+   border-radius: 0 8px 8px 0;
+   background: var(--btn-color);
+   color: #fff;
+   font-weight: 600;
+   cursor: pointer;
+}
+.jobs .jobs-form button:hover {
+   background: var(--btn-hover);
+}
+.jobs-message {
+   padding: 2rem;
+   text-align: center;
+}
+.jobs-empty {
+   background: #fff;
+   border-radius: 14px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.jobs-empty h3,
+.jobs-empty p {
+   margin-top: 0;
+}
+.job-poster {
+   margin: 0.25rem 0 0 !important;
+   color: #666 !important;
+   font-size: 0.85rem;
+   font-weight: 400 !important;
 }
 .jobs .jList .badge {
    background-color: #c185e9;
@@ -431,10 +494,83 @@ body {
    font-size: 0.85rem;
    font-weight: 600;
    justify-self: start;
+   white-space: nowrap;
 }
 
 .jobs .jList.delete {
    display: none;
+}
+
+.jobs.extra-space {
+   padding-top: 7rem;
+}
+
+@media (max-width: 768px) {
+   #navbar {
+      min-height: 96px;
+   }
+
+   .logo img {
+      width: 180px;
+      height: 88px;
+      object-fit: contain;
+      object-position: center;
+   }
+
+   #menu {
+      top: 96px;
+   }
+
+   .obj-width {
+      width: min(100% - 2rem, 600px);
+   }
+
+   .contact-content {
+      gap: 2rem;
+   }
+
+   .contact-info,
+   .contact-form-card {
+      flex-basis: 100%;
+      max-width: none;
+   }
+
+   .contact-info img {
+      width: min(100%, 420px);
+      margin-top: 1.5rem;
+   }
+
+   .jobs.extra-space {
+      padding-top: 6.5rem;
+   }
+
+   .jobs .job-id {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+   }
+
+   .jobs .job-id li {
+      padding: 0.9rem 1.25rem;
+   }
+
+   .jobs .jList {
+      grid-template-columns: 48px minmax(0, 1fr);
+      padding: 1rem;
+   }
+
+   .jobs .jList > p,
+   .jobs .jList .badge {
+      grid-column: 2;
+      justify-self: start;
+   }
+
+   .jobs .jList > p {
+      margin-top: 0.5rem;
+   }
+
+   .jobs .jList .badge {
+      margin-top: 0.25rem;
+   }
 }
 
 /* Brand Section */
@@ -626,28 +762,36 @@ footer {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-   align-items: center;
-   gap: 4rem;
+   align-items: flex-start;
+   gap: clamp(2rem, 6vw, 5rem);
 }
 .contact-info {
-   flex: 1 1 400px;
+   flex: 1 1 360px;
    text-align: left;
 }
 .contact-info h2 {
-   font-size: 2.5rem;
+   font-size: clamp(2rem, 4vw, 2.8rem);
    margin-top: 0;
+   margin-bottom: 1rem;
+}
+.contact-info p {
+   max-width: 520px;
+   color: #4d4d4d;
 }
 .contact-info img {
-   max-width: 100%;
-   border-radius: 15px;
+   display: block;
+   width: min(100%, 420px);
+   height: auto;
+   margin-top: 2.5rem;
+   border-radius: 24px;
    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-   margin-top: 2rem;
 }
 .contact-form-card {
-   flex: 1 1 450px;
+   flex: 1 1 480px;
+   max-width: 620px;
    background: #fff;
-   padding: 2.5rem;
-   border-radius: 15px;
+   padding: clamp(1.5rem, 4vw, 2.5rem);
+   border-radius: 20px;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 .contact form {
@@ -657,6 +801,45 @@ footer {
    font-weight: 600;
    margin-top: 1rem;
    display: block;
+}
+.contact form .form-control {
+   margin: 0.45rem 0 0.75rem;
+}
+.contact form textarea.form-control {
+   min-height: 125px;
+   resize: vertical;
+}
+.contact-submit {
+   width: 100%;
+   margin-top: 0.75rem;
+   border: none;
+   cursor: pointer;
+}
+.contact-submit:disabled {
+   cursor: wait;
+   opacity: 0.7;
+}
+.form-message {
+   padding: 10px 15px;
+   border-radius: 8px;
+   margin-bottom: 1rem;
+   font-weight: 500;
+}
+.form-message-success {
+   background-color: #d4edda;
+   color: #155724;
+}
+.form-message-error {
+   background-color: #f8d7da;
+   color: #721c24;
+}
+.contact iframe {
+   display: block;
+   width: 100%;
+   min-height: 380px;
+   border: 0;
+   border-radius: 18px;
+   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 /* Dashboard / Wallet Styling */

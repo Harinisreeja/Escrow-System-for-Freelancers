@@ -18,9 +18,9 @@ const Navbar = () => {
 
   return (
     <header id="head">
-      <div id="navbar" class="obj-width">
-        <Link to="/" class="logo">
-          <img src="https://dynamic.design.com/preview/logodraft/869ee20a-f5c7-46df-90c6-4fe725088b52/image/large.png" alt="Logo" />
+      <div id="navbar" className="obj-width">
+        <Link to="/" className="logo">
+          <img src="/escrow-system-hero.png" alt="Escrow System for Freelancers" />
         </Link>
         <ul id="menu" className={menuActive ? 'active' : ''}>
           <li><Link to="/" onClick={() => setMenuActive(false)}>Home</Link></li>

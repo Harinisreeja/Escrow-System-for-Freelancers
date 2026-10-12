@@ -47,7 +47,7 @@ const JobList = () => {
   return (
     <section className="jobs sec-space obj-width extra-space">
       <h1>Find Your Dream Job</h1>
-      <p style={{ color: '#666' }}>Explore thousands of job opportunities tailored for freelancers.</p>
+      <p className="jobs-intro">Explore thousands of job opportunities tailored for freelancers.</p>
 
       {/* Search bar */}
       <form className="jobs-form" onSubmit={handleSearchSubmit}>
@@ -61,7 +61,7 @@ const JobList = () => {
       </form>
 
       {/* Job filters */}
-      <ul className="job-id" style={{ justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+      <ul className="job-id">
         <li 
           onClick={() => setType('all')} 
           className={type === 'all' ? 'active' : ''}
@@ -91,7 +91,7 @@ const JobList = () => {
       {/* Job listings */}
       <div className="jobs-container">
         {loading ? (
-          <div style={{ textAlign: 'center', padding: '2rem' }}>
+          <div className="jobs-message">
             <p>Loading jobs...</p>
           </div>
         ) : jobs.length > 0 ? (
@@ -100,7 +100,7 @@ const JobList = () => {
               <img src="https://th.bing.com/th/id/OIP.uBYsSL7JDekYP3VpxWZvYQHaHa?rs=1&pid=ImgDetMain" alt="Job icon" />
               <div>
                 <h3>{job.title}</h3>
-                <p style={{ margin: '5px 0 0 0', fontWeight: 'normal', color: '#666', fontSize: '0.9rem' }}>
+                <p className="job-poster">
                   Posted by {job.client?.firstName} {job.client?.lastName}
                 </p>
               </div>
@@ -109,7 +109,7 @@ const JobList = () => {
             </Link>
           ))
         ) : (
-          <div style={{ textAlign: 'center', padding: '3rem', background: 'white', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+          <div className="jobs-message jobs-empty">
             <h3>No jobs found</h3>
             <p>Try resetting the category filter or searching for another keyword.</p>
           </div>

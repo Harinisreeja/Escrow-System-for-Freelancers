@@ -38,81 +38,123 @@ const seedDatabase = async () => {
     const User = require('./models/User');
     const Job = require('./models/Job');
 
-    // Check if jobs exist
-    const jobCount = await Job.countDocuments();
-    if (jobCount === 0) {
-      console.log('Seeding database with default users and jobs...');
-      
-      // Create default client
-      let clientUser = await User.findOne({ email: 'client@escrow.com' });
-      if (!clientUser) {
-        clientUser = new User({
-          firstName: 'Robert',
-          lastName: 'Fox',
-          email: 'client@escrow.com',
-          password: 'password123',
-          role: 'client',
-          balance: 15000,
-        });
-        await clientUser.save();
+    console.log('Checking default users and jobs...');
+
+    // Create default clients used by the seeded jobs.
+    const defaultClients = [
+      {
+        firstName: 'Robert',
+        lastName: 'Fox',
+        email: 'client@escrow.com',
+        password: 'password123',
+        role: 'client',
+        balance: 15000,
+      },
+      {
+        firstName: 'Sarah',
+        lastName: 'Miller',
+        email: 'sarah@escrow.com',
+        password: 'password123',
+        role: 'client',
+        balance: 12000,
+      },
+      {
+        firstName: 'David',
+        lastName: 'Wilson',
+        email: 'david@escrow.com',
+        password: 'password123',
+        role: 'client',
+        balance: 18000,
+      },
+      {
+        firstName: 'Emily',
+        lastName: 'Davis',
+        email: 'emily@escrow.com',
+        password: 'password123',
+        role: 'client',
+        balance: 10000,
+      },
+      {
+        firstName: 'Michael',
+        lastName: 'Brown',
+        email: 'michael@escrow.com',
+        password: 'password123',
+        role: 'client',
+        balance: 14000,
+      },
+    ];
+
+    const clients = {};
+    for (const clientData of defaultClients) {
+      let client = await User.findOne({ email: clientData.email });
+      if (!client) {
+        client = await User.create(clientData);
       }
-
-      // Create default freelancer
-      let freelancerUser = await User.findOne({ email: 'freelancer@escrow.com' });
-      if (!freelancerUser) {
-        freelancerUser = new User({
-          firstName: 'Kristin',
-          lastName: 'Watson',
-          email: 'freelancer@escrow.com',
-          password: 'password123',
-          role: 'freelancer',
-          balance: 2500,
-        });
-        await freelancerUser.save();
-      }
-
-      // Seed jobs
-      const defaultJobs = [
-        {
-          title: 'Web Developer',
-          description: 'We are looking for a skilled Web Developer to join our team. You will be responsible for developing and maintaining high-quality web applications using modern web technologies. Experience with database design and API integrations is highly desired.',
-          budget: 1500,
-          type: 'fullTime',
-          client: clientUser._id,
-        },
-        {
-          title: 'Freelancer Copywriter',
-          description: 'Need a creative writer to craft engaging blog posts, landing page copy, and email marketing campaigns. You must have a strong portfolio demonstrating your writing style and ability to explain complex technical products in simple words.',
-          budget: 1100,
-          type: 'freelancer',
-          client: clientUser._id,
-        },
-        {
-          title: 'Business Associate',
-          description: 'Assist in business operations, client communication, marketing proposals, and report generations. Strong organizational and communication skills are required. Experience in freelancing systems or escrow services is a plus.',
-          budget: 1000,
-          type: 'partTime',
-          client: clientUser._id,
-        },
-        {
-          title: 'Digital Marketing Specialist',
-          description: 'Looking for a digital marketer to drive user acquisition. Familiarity with SEO, Google Ads, Meta Ads, and content marketing is required. Set up tracking campaigns and report on performance metrics weekly.',
-          budget: 1300,
-          type: 'fullTime',
-          client: clientUser._id,
-        },
-        {
-          title: 'User Experience Designer',
-          description: 'Help redesign our client dashboard to simplify payments and contract creation. Build wireframes and clickable high-fidelity prototypes. Experience with dark themes and modern clean aesthetics is a must.',
-          budget: 1200,
-          type: 'partTime',
-          client: clientUser._id,
-        },
-      ];
-
-      await Job.insertMany(defaultJobs);
-      console.log('Database seeded successfully with default users and jobs!');
+      clients[clientData.email] = client;
     }
+
+    // Create default freelancer
+    let freelancerUser = await User.findOne({ email: 'freelancer@escrow.com' });
+    if (!freelancerUser) {
+      freelancerUser = new User({
+        firstName: 'Kristin',
+        lastName: 'Watson',
+        email: 'freelancer@escrow.com',
+        password: 'password123',
+        role: 'freelancer',
+        balance: 2500,
+      });
+      await freelancerUser.save();
+    }
+
+    // Seed or update the default jobs without changing user-created jobs.
+    const defaultJobs = [
+      {
+        title: 'Web Developer',
+        description: 'We are looking for a skilled Web Developer to join our team. You will be responsible for developing and maintaining high-quality web applications using modern web technologies. Experience with database design and API integrations is highly desired.',
+        budget: 1500,
+        type: 'fullTime',
+        client: clients['client@escrow.com']._id,
+      },
+      {
+        title: 'Freelancer Copywriter',
+        description: 'Need a creative writer to craft engaging blog posts, landing page copy, and email marketing campaigns. You must have a strong portfolio demonstrating your writing style and ability to explain complex technical products in simple words.',
+        budget: 1100,
+        type: 'freelancer',
+        client: clients['sarah@escrow.com']._id,
+      },
+      {
+        title: 'Business Associate',
+        description: 'Assist in business operations, client communication, marketing proposals, and report generations. Strong organizational and communication skills are required. Experience in freelancing systems or escrow services is a plus.',
+        budget: 1000,
+        type: 'partTime',
+        client: clients['david@escrow.com']._id,
+      },
+      {
+        title: 'Digital Marketing Specialist',
+        description: 'Looking for a digital marketer to drive user acquisition. Familiarity with SEO, Google Ads, Meta Ads, and content marketing is required. Set up tracking campaigns and report on performance metrics weekly.',
+        budget: 1300,
+        type: 'fullTime',
+        client: clients['emily@escrow.com']._id,
+      },
+      {
+        title: 'User Experience Designer',
+        description: 'Help redesign our client dashboard to simplify payments and contract creation. Build wireframes and clickable high-fidelity prototypes. Experience with dark themes and modern clean aesthetics is a must.',
+        budget: 1200,
+        type: 'partTime',
+        client: clients['michael@escrow.com']._id,
+      },
+    ];
+
+    for (const job of defaultJobs) {
+      await Job.findOneAndUpdate(
+        { title: job.title },
+        { $set: job },
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
+    }
+
+    console.log('Default users and jobs are ready!');
   } catch (error) {
     console.error('Error seeding database:', error.message);
   }

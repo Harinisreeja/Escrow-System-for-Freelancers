@@ -44,21 +44,21 @@ const Contact = () => {
     <div>
       {/* Contact Section */}
       <section className="contact obj-width sec-space extra-space">
-        <div className="contact-content" style={{ width: '100%' }}>
+        <div className="contact-content">
           <div className="contact-info">
             <h2>Get in Touch</h2>
             <p>Have questions or feedback? Reach out to us—we'd love to hear from you!</p>
-            <img src="https://th.bing.com/th/id/OIP.YjnjaqeJQF6Bj1jZB5sI_gHaHa?rs=1&pid=ImgDetMain" alt="Contact banner" />
+            <img src="/contact-support.svg" alt="Customer support representative" />
           </div>
           <div className="contact-form-card">
             <form id="contact-form" onSubmit={handleSubmit}>
               {successMsg && (
-                <div style={{ backgroundColor: '#d4edda', color: '#155724', padding: '10px 15px', borderRadius: '8px', marginBottom: '1rem', fontWeight: '500' }}>
+                <div className="form-message form-message-success">
                   {successMsg}
                 </div>
               )}
               {errorMsg && (
-                <div style={{ backgroundColor: '#f8d7da', color: '#721c24', padding: '10px 15px', borderRadius: '8px', marginBottom: '1rem', fontWeight: '500' }}>
+                <div className="form-message form-message-error">
                   {errorMsg}
                 </div>
               )}
@@ -96,7 +96,7 @@ const Contact = () => {
               <button 
                 type="submit" 
                 id="s-btn" 
-                style={{ width: '100%', border: 'none', cursor: 'pointer', marginTop: '1rem' }}
+                className="contact-submit"
                 disabled={submitting}
               >
                 {submitting ? 'Submitting...' : 'Submit'}
