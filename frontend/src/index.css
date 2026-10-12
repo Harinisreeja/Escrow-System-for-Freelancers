@@ -20,6 +20,20 @@ body {
     line-height: 1.6;
 }
 
+.app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-main {
+    flex: 1;
+}
+
+.auth-shell {
+    min-height: 100vh;
+}
+
 /* Reusable form control */
 .form-control {
     width: 100%;
@@ -42,10 +56,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 2rem;
+    padding: 3rem 1rem;
 }
 .auth-card {
     background: rgba(255, 255, 255, 0.9);
@@ -98,6 +113,17 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .auth-page {
+        align-items: flex-start;
+        padding: 2rem 1rem;
+    }
+
+    .auth-card {
+        padding: 1.5rem;
+    }
 }
 
 /* Sign Up button styling */

@@ -41,8 +41,6 @@ const SignUp = () => {
       className="auth-page" 
       style={{
         backgroundImage: "url('https://images.pexels.com/photos/1631678/pexels-photo-1631678.jpeg?cs=srgb&dl=pexels-abdghat-1631678.jpg&fm=jpg')",
-        marginTop: '100px',
-        padding: '3rem 1rem'
       }}
     >
       <div className="auth-card" style={{ maxWidth: '450px', background: 'rgba(255, 255, 255, 0.95)' }}>

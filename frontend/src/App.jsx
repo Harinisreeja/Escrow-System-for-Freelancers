@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
 // Components
@@ -16,26 +16,35 @@ import Contact from './pages/Contact';
 import CreateJob from './pages/CreateJob';
 import Dashboard from './pages/Dashboard';
 
+function AppLayout() {
+  const location = useLocation();
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
+
+  return (
+    <div className={isAuthPage ? 'app-shell auth-shell' : 'app-shell'}>
+      {!isAuthPage && <Navbar />}
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/jobs" element={<JobList />} />
+          <Route path="/jobs/:id" element={<JobDetails />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/create-job" element={<CreateJob />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </main>
+      {!isAuthPage && <Footer />}
+    </div>
+  );
+}
+
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Navbar />
-          <main style={{ flex: 1 }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/jobs" element={<JobList />} />
-              <Route path="/jobs/:id" element={<JobDetails />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/create-job" element={<CreateJob />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <AppLayout />
       </Router>
     </AuthProvider>
   );

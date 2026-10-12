@@ -32,7 +32,6 @@ const Login = () => {
       className="auth-page" 
       style={{
         backgroundImage: "url('https://i.pinimg.com/originals/a2/e7/0e/a2e70ee9920b35d55f9fc6d4b5af21aa.gif')",
-        marginTop: '100px'
       }}
     >
       <div className="auth-card">
